@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: SansSerif, serif;
+}
+
+
+.middle-timer > .timer{
+    padding: 0 46px 0 46px;
+    font-size: 20px;
+    text-align: center;
+    width: 100px;
+    float: left;
+}
+
+.background-img {
+    background-image:url(https://downloadfestival.co.uk/wp-content/uploads/2019/06/2019_DownloadFestival_MattEachus_013-1200x600.jpg);
+    filter: blur(8px);
+    -webkit-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.middle-timer {
+    background-color: rgba(0,0,0, 0.4);
+    font-family: SansSerif, serif;
+    color: white;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40%;
+    padding: 3%;
+    text-align: center;
+}
+
+.timer > div{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#counting-text {
+    width: 60%;
+    font-size: 40px;
+    float: left;
+    padding-left: 15px;
+}
+
+#download-icon {
+    width: 257px;
+    padding-left: 25px;
+    float: left;
+}
