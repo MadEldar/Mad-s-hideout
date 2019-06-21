@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <style>body,html{height:100%;margin:0;font-family:SansSerif,serif}.middle-timer>.timer{padding:0 46px 0 46px;font-size:20px;text-align:center;width:100px;float:left}.background-img{background-image:url(https://downloadfestival.co.uk/wp-content/uploads/2019/06/2019_DownloadFestival_MattEachus_013-1200x600.jpg);filter:blur(8px);-webkit-filter:blur(5px);height:100%;width:100%;background-position:center;background-repeat:no-repeat;background-size:cover}.middle-timer{background-color:rgba(0,0,0, 0.4);font-family:SansSerif,serif;color:white;border:3px solid #f1f1f1;position:absolute;left:50%;transform:translate(-50%,-50%);z-index:2;width:40%;padding:3%;text-align:center}.timer>div{background-color:rgba(0,0,0,0.8)}#counting-text{width:60%;font-size:40px;float:left;padding-left:15px}#download-icon{width:257px;height:100%;padding-left:25px;float:left}.timer1{top:25%}.timer2{top:75%}</style>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Download Festival Countdown</title>
 </head>
-<body onload="start_timer()">
-<div class="background-img"></div>
-
-<div class="middle-timer">
-    <div id="counting-text">
-        <h2>Counting down to</h2>
+<body>
+    <div class="background-img"></div>
+        <div class="middle-timer timer1">
+            <div id="counting-text">
+                <h2>Counting down to</h2>
+            </div>
+            <img src="https://downloadfestival.co.uk/assets/images/dl-logo-combined.svg" id="download-icon" onclick="redirect()">
+            <div class="timer days"></div>
+            <div class="timer hours"></div>
+            <div class="timer minutes"></div>
+            <div class="timer seconds"></div>
+        </div>
+        <div class="middle-timer timer2">
+            <button onclick="duplicate()">Duplicate</button>
     </div>
-    <img src="https://downloadfestival.co.uk/assets/images/dl-logo-combined.svg" id="download-icon" onclick="redirect()">
-    <div class="timer" id="days"></div>
-    <div class="timer" id="hours"></div>
-    <div class="timer" id="minutes"></div>
-    <div class="timer" id="seconds"></div>
-</div>
     <script>
-        let countdownDate = new Date("June 12, 2020 00:00:00").getTime();
-        function start_timer() {
-            setInterval(function() {
-                let now = new Date().getTime();
-                let distance = countdownDate - now;
-                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("days").innerHTML = `<div>DAYS</div><div>${days}</div>`;
-                document.getElementById("hours").innerHTML = `<div>HOURS</div><div>${hours}</div>`;
-                document.getElementById("minutes").innerHTML = `<div>MINUTES</div><div>${minutes}</div>`;
-                document.getElementById("seconds").innerHTML = `<div>SECONDS</div><div>${seconds}</div>`;
-            }, 1000);
+        setInterval(function() {
+            let countdownDate = new Date("June 12, 2020 00:00:00").getTime();
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            for (let i = 0; i < document.getElementsByClassName('middle-timer').length; i++){
+                document.getElementsByClassName("days")[i].innerHTML = `<div>DAYS</div><div>${days}</div>`;
+                document.getElementsByClassName("hours")[i].innerHTML = `<div>HOURS</div><div>${hours<10?`0${hours}`:hours}</div>`;
+                document.getElementsByClassName("minutes")[i].innerHTML = `<div>MINUTES</div><div>${minutes<10?`0${minutes}`:minutes}</div>`;
+                document.getElementsByClassName("seconds")[i].innerHTML = `<div>SECONDS</div><div>${seconds<10?`0${seconds}`:seconds}</div>`;
+            }
+        }, 1000);
+    </script>
+    <script>
+        function duplicate() {
+            let firstTimer = document.getElementsByClassName('timer1');
+            let secondTimer = document.getElementsByClassName('timer2');
+            secondTimer[0].innerHTML = firstTimer[0].innerHTML;
         }
     </script>
     <script>

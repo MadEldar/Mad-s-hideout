@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>body,html{height:100%;margin:0;font-family:SansSerif,serif}.background-img{background-image:url(https://downloadfestival.co.uk/wp-content/uploads/2019/06/2019_DownloadFestival_MattEachus_013-1200x600.jpg);filter:blur(8px);-webkit-filter:blur(5px);height:100%;width:100%;background-position:center;background-repeat:no-repeat;background-size:cover}.slider{position:absolute;left:50%;top:50%;height:50%;width:100%;transform:translate(-50%,-50%)}.slider>img{position:absolute;height:100%;left:25%}</style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Download Festival Slide</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="background-img"></div>
+    <div class="slider">
+        <img id="i1" class="slide-img" src="http://as01.epimg.net/tikitakas/imagenes/2018/06/28/portada/1530201340_251708_1530201801_noticia_normal.jpg">
+        <img id="i2" class="slide-img" src="https://www.wepluggoodmusic.com/wp-content/uploads/2019/05/Download-Festival-Guns-N-Roses.jpg">
+        <img id="i3" class="slide-img" src="http://musixphoto.com/wp-content/uploads/2016/11/slipknot_download_201544_website_image_ncwr_standard.jpg">
+        <img id="i4" class="slide-img" src="https://cdn1-www.musicfeeds.com.au/assets/uploads/download-festival-crowd-source-facebook.jpg">
+    </div>
+    <script>
+        let i = 0;
+        $('img').hide();
+        $('#i1').show();
+        setInterval(function() {
+            i++;
+            if (i > $('img').length) {
+                i = 1;
+            }
+            $('body').ready(function () {
+                let middle = $(`#i${i}`);
+                let left;
+                let right;
+                if (i == 1){
+                    left = $(`#i${$('img').length}`);
+                } else {
+                    left = $(`#i${i-1}`);
+                }
+                if (i == $('img').length) {
+                    right = $('#i1');
+                } else {
+                    right = $(`#i${i+1}`);
+                }
+                left.hide();
+                middle.animate({
+                    left: '-=50%',
+                    opacity: '0'
+                }, 1500);
+                right.show();
+                right.css({
+                    position: 'absolute',
+                    left: '75%',
+                });
+                right.animate({
+                    left: '-=50%',
+                    opacity: '1'
+                }, 1500)
+            });
+        }, 3000);
+    </script>
+</body>
+</html>
