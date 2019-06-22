@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab session 2</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <style>body,html{height:100%;margin:0;font-family:SansSerif,serif}table{padding:3%}th{color:darkgray;font-size:13px}th,td{width:25px;text-align:center}span{padding:0 10px}.club-column{width:200px;text-align:left}</style>
+</head>
+<body>
+    <table>
+        <thead>
+        <th class="club-column">Club</th>
+        <th>MP</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>GF</th>
+        <th>GA</th>
+        <th>GD</th>
+        <th>Pts</th>
+        </thead>
+        <tbody class="list">
+<!--        Phần content sau khi load dữ liệu             -->
+<!--        <tr>-->
+<!--            <td class="club-column"><span>${i+1}</span>${football.list[i].name}</td>-->
+<!--            <td>${football.list[i].MP}</td>-->
+<!--            <td>${football.list[i].W}</td>-->
+<!--            <td>${football.list[i].D}</td>-->
+<!--            <td>${football.list[i].L}</td>-->
+<!--            <td>${football.list[i].GF}</td>-->
+<!--            <td>${football.list[i].GA}</td>-->
+<!--            <td>${football.list[i].GD}</td>-->
+<!--            <td>${football.list[i].Pts}</td>-->
+<!--        </tr>-->
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "../json/LabSession2.json",
+                method: "get",
+                success: function (football) {
+                    let divContent = '';
+                    for (let i = 0; i < football.list.length; i++) {
+                        divContent += `<tr><td class="club-column"><span>${i+1}</span>${football.list[i].name}</td><td>${football.list[i].MP}</td><td>${football.list[i].W}</td><td>${football.list[i].D}</td><td>${football.list[i].L}</td><td>${football.list[i].GF}</td><td>${football.list[i].GA}</td><td>${football.list[i].GD}</td><td>${football.list[i].Pts}</td></tr>`;
+                    }
+                    $('.list').html(divContent);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
