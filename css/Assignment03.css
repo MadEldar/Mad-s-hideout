@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: SansSerif, serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+strong, h1 {
+    color: black;
+}
+
+.main-block {
+    padding: 3%;
+    width: 22%;
+    color: grey;
+}
+
+.text > p{
+    line-height: 1.45em;
+    padding: 2% 0;
+}
+
+.info {
+    padding: 3% 0;
+    line-height: 0.8em;
+}

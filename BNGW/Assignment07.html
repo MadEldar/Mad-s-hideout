@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown for 10 minutes in script</title>
+</head>
+<body>
+<script>
+    let distance = 600000;
+    setInterval(function() {
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        console.log(`${minutes} : ${seconds}`);
+        distance -= 1000;
+    }, 1000);
+</script>
+</body>
+</html>
