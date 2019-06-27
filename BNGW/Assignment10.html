@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>London weather</title>
     <script src="../js/jquery-3.4.1.min.js"></script>
-<!--    <style>body,html{height:100%;margin:0;font-family:SansSerif,serif}h1{font-size:40px}.background-img{background-image:url(https://www.telegraph.co.uk/content/dam/news/2016/12/30/JS116839549_News_Fog-in-London-xlarge_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RQJ6Ra64K3tAxfZq0dvIBJw.jpg);filter:blur(8px);-webkit-filter:blur(5px);height:100%;width:100%;background-position:center;background-repeat:no-repeat;background-size:cover}.weather-forecast{background-color:rgba(0,0,0, 0.4);font-family:SansSerif,serif;font-size:20px;color:white;border:3px solid #f1f1f1;position:absolute;top:50%;left:30%;transform:translate(-25%,-50%);width:75%;padding:3%}.map-outer{width:300px;float:left}.map-outer>p{font-size:12px;color:darkgray}.weather-info{padding:0 3% 0 calc(300px + 3%);width:calc(90% - 300px)}#weather-name{font-size:28px;color:dodgerblue}.weather-main{width:calc(91%/3);float:left;padding-right:3%}.weather-block{padding-bottom:3%}.weather-detail{width:50%;float:left}</style>-->
+    <style>body,html{height:100%;margin:0;font-family:SansSerif,serif}h1{font-size:40px}.background-img{background-image:url(https://www.telegraph.co.uk/content/dam/news/2016/12/30/JS116839549_News_Fog-in-London-xlarge_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RQJ6Ra64K3tAxfZq0dvIBJw.jpg);filter:blur(8px);-webkit-filter:blur(5px);height:100%;width:100%;background-position:center;background-repeat:no-repeat;background-size:cover}.weather-forecast{background-color:rgba(0,0,0, 0.4);font-family:SansSerif,serif;font-size:20px;color:white;border:3px solid #f1f1f1;position:absolute;top:50%;left:30%;transform:translate(-25%,-50%);width:75%;padding:3%}.map-outer{width:300px;float:left}.map-outer>p{font-size:12px;color:darkgray}.weather-info{padding:0 3% 0 calc(300px + 3%);width:calc(90% - 300px)}#weather-name{font-size:28px;color:dodgerblue}.weather-main{width:calc(91%/3);float:left;padding-right:3%}.weather-block{padding-bottom:3%}.weather-detail{width:50%;float:left}</style>
 </head>
 <body>
     <div class="background-img"></div>
@@ -36,15 +36,25 @@
     </div>
     <script>
         $(document).ready(function () {
-            $.ajax({
-                url: "../json/weather.json",
-                method: "get",
-                success: function (londonWea) {
-                    let divContent = '';
-                    divContent += `<h1><strong>Weather Forecast - ${londonWea.name}</strong></h1><div class="map-outer"><div class="gmap_canvas"><iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=Equestrian%20Statue%20of%20Charles&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.bitgeeks.net">bitgeeks</a></div><style>.mapouter{position:relative;text-align:right;height:200px;width:300px}.gmap_canvas{overflow:hidden;background:none!important;height:200px;width:300px}</style><p>Longitude: ${londonWea.coord.lon} - Latitude: ${londonWea.coord.lat}</p></div><div class="weather-info"><div class="weather-block"> <span id="weather-name">${londonWea.weather[0].main}</span><div>Description: ${londonWea.weather[0].description}</div></div><div class="weather-block"><div class="weather-main">Temperature: ${londonWea.main.temp}&#176K</div><div class="weather-main">Minimum: ${londonWea.main.temp_min}&#176K</div><div class="weather-main">Maximum: ${londonWea.main.temp_max}&#176K</div><div class="weather-main">Pressure: ${londonWea.main.pressure}</div><div class="weather-main">Humidity: ${londonWea.main.humidity}</div></div> <br><br><br><br><div class="weather-block"><div class="weather-detail">Visibility: ${londonWea.visibility/1000} miles</div><div class="weather-detail">Clouds: ${londonWea.clouds.all}%</div><div>Wind speed: ${londonWea.wind.speed}% at ${londonWea.wind.deg}&#176</div></div></div>`;
-                    $('.weather-forecast').html(divContent);
-                }
-            })
+            if (!localStorage.getItem('londonWea')){
+                $.ajax({
+                    url: "../json/weather.json",
+                    method: "get",
+                    success: function (londonWea) {
+                        localStorage.setItem('londonWea', JSON.stringify(londonWea));
+                        console.log('Set local storage');
+                        let divContent = '';
+                        divContent += `<h1><strong>Weather Forecast - ${londonWea.name}</strong></h1><div class="map-outer"><div class="gmap_canvas"><iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=Equestrian%20Statue%20of%20Charles&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.bitgeeks.net">bitgeeks</a></div><style>.mapouter{position:relative;text-align:right;height:200px;width:300px}.gmap_canvas{overflow:hidden;background:none!important;height:200px;width:300px}</style><p>Longitude: ${londonWea.coord.lon} - Latitude: ${londonWea.coord.lat}</p></div><div class="weather-info"><div class="weather-block"> <span id="weather-name">${londonWea.weather[0].main}</span><div>Description: ${londonWea.weather[0].description}</div></div><div class="weather-block"><div class="weather-main">Temperature: ${londonWea.main.temp}&#176K</div><div class="weather-main">Minimum: ${londonWea.main.temp_min}&#176K</div><div class="weather-main">Maximum: ${londonWea.main.temp_max}&#176K</div><div class="weather-main">Pressure: ${londonWea.main.pressure}</div><div class="weather-main">Humidity: ${londonWea.main.humidity}</div></div> <br><br><br><br><div class="weather-block"><div class="weather-detail">Visibility: ${londonWea.visibility/1000} miles</div><div class="weather-detail">Clouds: ${londonWea.clouds.all}%</div><div>Wind speed: ${londonWea.wind.speed}% at ${londonWea.wind.deg}&#176</div></div></div>`;
+                        $('.weather-forecast').html(divContent);
+                    }
+                })
+            } else {
+                let londonWea = JSON.parse(localStorage.getItem('londonWea'));
+                console.log('Local storage used');
+                let divContent = '';
+                divContent += `<h1><strong>Weather Forecast - ${londonWea.name}</strong></h1><div class="map-outer"><div class="gmap_canvas"><iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=Equestrian%20Statue%20of%20Charles&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.bitgeeks.net">bitgeeks</a></div><style>.mapouter{position:relative;text-align:right;height:200px;width:300px}.gmap_canvas{overflow:hidden;background:none!important;height:200px;width:300px}</style><p>Longitude: ${londonWea.coord.lon} - Latitude: ${londonWea.coord.lat}</p></div><div class="weather-info"><div class="weather-block"> <span id="weather-name">${londonWea.weather[0].main}</span><div>Description: ${londonWea.weather[0].description}</div></div><div class="weather-block"><div class="weather-main">Temperature: ${londonWea.main.temp}&#176K</div><div class="weather-main">Minimum: ${londonWea.main.temp_min}&#176K</div><div class="weather-main">Maximum: ${londonWea.main.temp_max}&#176K</div><div class="weather-main">Pressure: ${londonWea.main.pressure}</div><div class="weather-main">Humidity: ${londonWea.main.humidity}</div></div> <br><br><br><br><div class="weather-block"><div class="weather-detail">Visibility: ${londonWea.visibility/1000} miles</div><div class="weather-detail">Clouds: ${londonWea.clouds.all}%</div><div>Wind speed: ${londonWea.wind.speed}% at ${londonWea.wind.deg}&#176</div></div></div>`;
+                $('.weather-forecast').html(divContent);
+            }
         })
     </script>
 </body>
