@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>London weather</title>
+    <title>Local store</title>
     <script src="../js/jquery-3.4.1.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/Assignment11.css"/>
     <link href="../css/fontawesome.min.css" rel="stylesheet">
     <link href="../css/brands.min.css" rel="stylesheet">
     <link href="../css/solid.min.css" rel="stylesheet">
 </head>
-<body>
+<body onload="changeMap(51.5124, -0.1420)">
     <header>
         <div class="black-bar">
             <div class="black-bar left">
@@ -154,31 +154,18 @@
     </footer>
     <script>
         let map;
-        $(document).ready(function () {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var lat = 51.5124696,long = -0.1420052;
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: lat, lng: long},
-                    zoom: 17
-                });
+        function changeMap (lat, long) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: lat, lng: long},
+                zoom: 17
             });
-        });
+        };
     </script>
     <script>
-        function parisDetail () {
-            $('#detailed h4')[0].innerHTML= $('#paris h4')[0].innerHTML;
-            $('#detailed h5')[0].innerHTML= $('#paris h5')[0].innerHTML;
-            $('#detailed div')[0].innerHTML= $('#paris div')[0].innerHTML;
-        }
-        function londonDetail () {
-            $('#detailed h4')[0].innerHTML= $('#london h4')[0].innerHTML;
-            $('#detailed h5')[0].innerHTML= $('#london h5')[0].innerHTML;
-            $('#detailed div')[0].innerHTML= $('#london div')[0].innerHTML;
-        }
-        function newyorkDetail () {
-            $('#detailed h4')[0].innerHTML= $('#new-york h4')[0].innerHTML;
-            $('#detailed h5')[0].innerHTML= $('#new-york h5')[0].innerHTML;
-            $('#detailed div')[0].innerHTML= $('#new-york div')[0].innerHTML;
+        function changeDetail (variable) {
+            $('#detailed h4')[0].innerHTML= $(`#${variable} h4`)[0].innerHTML;
+            $('#detailed h5')[0].innerHTML= $(`#${variable} h5`)[0].innerHTML;
+            $('#detailed div')[0].innerHTML= $(`#${variable} div`)[0].innerHTML;
         }
     </script>
     <script>
@@ -196,19 +183,19 @@
                 <h4>${citiesDetail.cities[0].name}</h4>
                 <h5>${citiesDetail.cities[0].address}</h5>
                 <div>${citiesDetail.cities[0].details}</div>
-                <button id="button-london" onclick="londonDetail()">VIEW DETAILS</button>
+                <button id="button-london" onclick="changeDetail('london'); changeMap(51.5124, -0.1420)">VIEW DETAILS</button>
             </div>
-            <div class="city" id="new-york">
+            <div class="city" id="newyork">
                 <h4>${citiesDetail.cities[1].name}</h4>
                 <h5>${citiesDetail.cities[1].address}</h5>
                 <div>${citiesDetail.cities[1].details}</div>
-                <button id="button-newyork" onclick="newyorkDetail()">VIEW DETAILS</button>
+                <button id="button-newyork" onclick="changeDetail('newyork'); changeMap(40.7680, -73.9829)">VIEW DETAILS</button>
             </div>
             <div class="city" id="paris">
                 <h4>${citiesDetail.cities[2].name}</h4>
                 <h5>${citiesDetail.cities[2].address}</h5>
                 <div>${citiesDetail.cities[2].details}</div>
-                <button id="button-paris" onclick="parisDetail()">VIEW DETAILS</button>
+                <button id="button-paris" onclick="changeDetail('paris'); changeMap(48.8640, 2.3316)">VIEW DETAILS</button>
             </div>`;
                         $('.city-address').html(divContent);
                     }
@@ -222,19 +209,19 @@
                 <h4>${citiesDetail.cities[0].name}</h4>
                 <h5>${citiesDetail.cities[0].address}</h5>
                 <div>${citiesDetail.cities[0].details}</div>
-                <button id="button-london" onclick="londonDetail()">VIEW DETAILS</button>
+                <button id="button-london" onclick="changeDetail('london'); changeMap(51.5124, -0.1420)">VIEW DETAILS</button>
             </div>
-            <div class="city" id="new-york">
+            <div class="city" id="newyork">
                 <h4>${citiesDetail.cities[1].name}</h4>
                 <h5>${citiesDetail.cities[1].address}</h5>
                 <div>${citiesDetail.cities[1].details}</div>
-                <button id="button-newyork" onclick="newyorkDetail()">VIEW DETAILS</button>
+                <button id="button-newyork" onclick="changeDetail('newyork'); changeMap(40.7680, -73.9829)">VIEW DETAILS</button>
             </div>
             <div class="city" id="paris">
                 <h4>${citiesDetail.cities[2].name}</h4>
                 <h5>${citiesDetail.cities[2].address}</h5>
                 <div>${citiesDetail.cities[2].details}</div>
-                <button id="button-paris" onclick="parisDetail()">VIEW DETAILS</button>
+                <button id="button-paris" onclick="changeDetail('paris'); changeMap(48.8640, 2.3316)">VIEW DETAILS</button>
             </div>`;
                 $('.city-address').html(divContent);
             }

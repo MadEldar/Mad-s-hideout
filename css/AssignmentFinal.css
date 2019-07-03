@@ -1,0 +1,518 @@
+/*<link type="text/css" rel="stylesheet" href="../css/style.css"/>*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Raleway, SansSerif, serif;
+}
+
+header {
+    background-image: url("../img/AssignmentFinal/header-background.png");
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    transition: 0.25s ease;
+    top: 0;
+    border-bottom: 2px solid #4D5065;
+    z-index: 1;
+}
+
+#logo {
+    float: left;
+}
+
+.navbar {
+    width: auto;
+    float: right;
+}
+
+a:link, a:visited  {
+    text-decoration: none;
+    color: #C7CCD2;
+}
+
+.navbar > div {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #C7CCD2;
+    width: auto;
+    float: left;
+}
+
+.scrolled {
+    transition: 0.25s ease;
+}
+
+nav.scrolled {
+    margin: 0;
+    background-image: url("../img/AssignmentFinal/header-background.png");
+}
+
+.headline {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.headline > div {
+    font-family: "Open sans";
+    font-weight: 900;
+    line-height: 1.1em;
+    text-transform: uppercase;
+}
+
+.headline > p {
+    line-height: 1.5em;
+}
+
+#btn-detail {
+    text-transform: uppercase;
+    background-color: #E84545;
+    color: white;
+    border: none;
+    padding: 1.5% 5%;
+}
+
+article {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+#feature-list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.features > img {
+    height: 50px;
+}
+
+.features > h3 {
+    text-transform: uppercase;
+}
+
+#work-list {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.works {
+    position: relative;
+    clip-path: inset(0);
+}
+
+.works > img {
+    width: 100%;
+    height: 100%;
+}
+
+.text-overlay {
+    opacity: 0;
+    color: #ffffff;
+    background-color: #e84545;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.text-overlay > h4 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+
+.text-overlay > p {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.works:hover img {
+    opacity: 1;
+    transition: 0.5s ease;
+    transform: scale(1.2);
+}
+
+.works:hover .text-overlay {
+    opacity: 0.9;
+    transition: 0.5s ease;
+}
+
+.works:hover .text-overlay > h4 {
+    top: 35%;
+    transition: 0.5s ease;
+}
+
+.works:hover .text-overlay > p {
+    top: 55%;
+    transition: 0.5s ease;
+}
+
+#team-list {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.member {
+    float: left;
+}
+
+.member > img {
+    width: 100%;
+}
+
+.member > h4 {
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.member > h5 {
+    color: #e84545;
+    text-transform: uppercase;
+}
+
+.member > p {
+    color: #6c7279;
+}
+
+.social {
+    color: #c6cacc;
+}
+
+.border {
+    position: relative;
+    float: left;
+    border: 1px solid #e8ecee;
+}
+
+.border > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#testimonials {
+    width: 100%;
+    float: left;
+    background-color: #53354a;
+}
+
+#testimonials > img {
+    float: left;
+}
+
+.testimonials-text {
+    float: left;
+    color: #ffffff;
+}
+
+.text-blocks {
+    padding: 100px 15% 0;
+}
+
+.text-blocks > h2 {
+    font-family: Cardo;
+    font-style: italic;
+    font-weight: normal;
+}
+
+#download {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.download-text > h4 {
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+.download-text > p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+#download > button {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #e52e2e;
+    color: #ffffff;
+    padding: 15px 40px;
+    border: none;
+    margin-top: 30px;
+}
+
+#information {
+    width: 64%;
+    float: left;
+    padding: 3% 18%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3a3e64;
+}
+
+#information > div {
+    width: calc(94%/3);
+    float: left;
+    padding: 0 1%;
+}
+
+#information > div > h5 {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+
+#information > div > p {
+    font-size: 14px;
+    color: #9d9fb2;
+}
+
+#info-social {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+}
+
+#info-social > a {
+    color: #ffffff;
+    width: 45px;
+    float: left;
+    display: block;
+}
+
+#copyright {
+    position: relative;
+    background-color: #313454;
+    width: 100%;
+    height: 100px;
+    float: left;
+    text-align: center;
+    color: #9d9fb2;
+}
+
+#copyright > h4 {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#copyright > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#copyright > div > * {
+    width: auto;
+    float: left;
+}
+
+#copyright > div > p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#copyright > div > i {
+    padding: 0 4px;
+    color: #e84545;
+}
+
+@media screen and (max-width: 799px){
+    header {
+        height: calc(60px + 35vw);
+    }
+
+    nav {
+        width: 60%;
+        margin: 2% 20%;
+        padding-bottom: 2%;
+    }
+
+    #logo {
+        padding-top: calc(0.7vw - 9px);
+        height: calc(15px + 0.4vw);
+    }
+
+    .navbar {
+        min-width: 360px;
+        padding-top: 0.5vw;
+    }
+
+    .navbar > div {
+        font-size: calc(4px + 1vw);
+        margin: 0 10px;
+        top: 1vw;
+    }
+
+    nav.scrolled {
+        padding: 1% 5%;
+    }
+
+    .headline {
+        width: 90%;
+        top: calc(5% + 5vw);
+        margin: 2% 5%;
+    }
+
+    .headline > div {
+        font-size: 5.5vw;
+    }
+
+    .headline > p {
+        font-size: 2.2vw;
+    }
+
+    #btn-detail {
+        font-size: calc(5px + 1vw);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    header {
+        height: calc(30px + 32vw);
+    }
+
+    nav {
+        width: 60%;
+        margin: 2% 20%;
+        padding-bottom: 2%;
+    }
+
+    #logo {
+        height: calc(15px + 0.4vw);
+    }
+
+    .navbar {
+        min-width: 360px;
+    }
+
+    .navbar > div {
+        font-size: calc(4px + 0.6vw);
+        margin: 0 1vw;
+        top: 1vw;
+    }
+
+    nav.scrolled {
+        padding: 1% 20%;
+    }
+
+    .headline {
+        width: 60%;
+        top: calc(5% + 5vw);
+        margin: 2% 20%;
+    }
+
+    .headline > div {
+        font-size: 3.5vw;
+    }
+
+    .headline > p {
+        font-size: 1.3vw;
+    }
+
+    #btn-detail {
+        font-size: calc(5px + 1vw);
+    }
+
+    #feature-list {
+        width: 60%;
+        margin: 50px 20%;
+    }
+
+    .features {
+        width: calc(88% / 3);
+        margin: 30px 2%;
+        font-size: calc(8px + 0.5vw);
+    }
+
+    .features > h3 {
+        font-size: calc(5px + 0.5vw);
+    }
+
+    .works {
+        width: 25%;
+        min-width: 250px;
+        height: 18.8vw;
+        min-height: 190px;
+    }
+
+    .text-overlay > * {
+        font-size: calc(2px + 1vw);
+    }
+
+    #team-list {
+        width: 60%;
+        margin: 50px 20%;
+    }
+
+    .member {
+        width: calc(25% - 30px);
+        margin: 0 15px;
+    }
+
+    .member > h4 {
+        font-size: 1.1vw;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .member > h5 {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .member > p {
+        font-size: 14px;
+        line-height: 1.5em;
+    }
+
+    .social {
+        font-size: 18px;
+    }
+
+    .border {
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
+    }
+
+    #testimonials > img {
+        width: 50%;
+    }
+
+    .testimonials-text {
+        width: 50%;
+    }
+
+    .text-blocks {
+        padding: 100px 15% 0;
+    }
+}
