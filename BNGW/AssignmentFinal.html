@@ -14,10 +14,12 @@
     <link type="text/css" rel="stylesheet" href="../css/AssignmentFinal.css"/>
 </head>
 <body>
-<header>
+<header id="header-id">
     <nav>
         <div>
-            <img src="../img/AssignmentFinal/ActiveBox.png" id="logo">
+            <a href="#header-id">
+                <img src="../img/AssignmentFinal/ActiveBox.png" id="logo">
+            </a>
         </div>
         <div class="navbar">
             <div>
@@ -33,7 +35,7 @@
                 <a href="#testimonials">Testimonials</a>
             </div>
             <div>
-                <a>Download</a>
+                <a href="#download">Download</a>
             </div>
         </div>
     </nav>
@@ -236,6 +238,12 @@
                 <h2>"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam..."</h2>
                 <p>Susan Sims, Interaction Designer at XYZ</p>
             </div>
+            <div class="slide-button">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </div>
     </section>
     <section id="download">
@@ -275,18 +283,20 @@
         </div>
     </div>
     <div id="copyright">
-        <h4>Copyright &copy; 2015 ActiveBox. All Rights Reserved</h4>
         <div>
-            <p>Made with</p>
-            <i class="fas fa-heart"></i>
-            <p>by <a href="#copyright">Kamal Chaneman</a></p>
+            <h4>Copyright &copy; 2015 ActiveBox. All Rights Reserved</h4>
+            <div class="credit">
+                <p>Made with</p>
+                <i class="fas fa-heart"></i>
+                <p>by <a href="#copyright">Kamal Chaneman</a></p>
+            </div>
         </div>
     </div>
 </footer>
 <script>
     $(document).ready(function() {
         $(window).on('scroll', function() {
-            if (Math.round($(window).scrollTop()) > 50) {
+            if (Math.round($(window).scrollTop()) > 20) {
                 $('nav').addClass('scrolled');
             } else {
                 $('nav').removeClass('scrolled');
