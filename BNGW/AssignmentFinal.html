@@ -314,6 +314,9 @@
 </footer>
 <script>
     $(document).ready(function() {
+        if (Math.round($(window).scrollTop()) > 20) {
+            $('nav').addClass('scrolled');
+        }
         $(window).on('scroll', function() {
             if (Math.round($(window).scrollTop()) > 20) {
                 $('nav').addClass('scrolled');
