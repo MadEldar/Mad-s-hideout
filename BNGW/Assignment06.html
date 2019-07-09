@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Brand</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="../lib/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/Assignment06.css"/>
+</head>
+<body>
+    <header>
+        <div id="upper-header" class="col-12 float-left">
+            <div id="head-info" class="col-4 float-left">
+                <div>
+                    <i class="fas fa-envelope orange-color"></i>
+                    <p>info.shopy.com</p>
+                    <i class="fas fa-phone orange-color"></i>
+                    <p>996 - 5553 - 453</p>
+                </div>
+            </div>
+            <div id="head-social" class="col-2 float-right">
+                <div>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div id="lower-header" class="col-12 float-left">
+            <div id="head-logo" class="col-2 float-left">
+                <img src="../img/Assignment06/shopy-logo.png">
+            </div>
+            <div class="col-6 float-left">
+                <div id="nav">
+                    <p>Home</p>
+                    <p class="orange-color">Products</p>
+                    <p>Hot Deals</p>
+                    <p>About</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+            <div class="col-2 float-right">
+                <div id="head-right">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-user"></i>
+                    <i class="fas fa-shopping-basket orange-color"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article>
+        <section id="product" class="col-8 offset-2 float-left">
+            <div id="product-img" class="col-4 float-left">
+                <div class="col-12 float-left detail-img">
+                    <img src="../img/Assignment06/product-img-current.png">
+                </div>
+                <div class="sub-img">
+                    <img src="../img/Assignment06/product-img1.png">
+                </div>
+                <div class="sub-img">
+                    <img src="../img/Assignment06/product-img2.png">
+                </div>
+                <div class="sub-img selected">
+                    <img src="../img/Assignment06/product-img3.png">
+                </div>
+            </div>
+            <div id="product-details" class="col-8 float-left">
+                <div id="detail-text" class="col-12 float-left">
+                    <h3>Full winter kit</h3>
+                    <h5>Half Jacket + Skiny Trousers + Boot leather</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                    <p>and typesetting industry</p>
+                </div>
+                <div id="detail-options" class="col-12 float-left">
+                    <div id="detail-size" class="col-6 float-left">
+                        <span>Choose size</span>
+                        <form>
+                            <input type = "radio" name="size-options" id="sizeSmall" checked>
+                            <label for = "sizeSmall" class="checked">S</label>
+                            <input type = "radio" name="size-options" id="sizeMedium">
+                            <label for = "sizeMedium"> - M</label>
+                            <input type = "radio" name="size-options" id="sizeLarge">
+                            <label for = "sizeLarge"> - L</label>
+                            <input type = "radio" name="size-options" id="sizeXL">
+                            <label for = "sizeXL"> - XL</label>
+                        </form>
+                    </div>
+                    <div id="detail-quantity" class="col-4 float-right">
+                        <span>Choose quality</span>
+                        <button onclick="decreaseQuantity()">-</button>
+                        <span id="product-quantity" class="orange-color"></span>
+                        <button onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+                <div id="detail-order" class="col-12 float-left">
+                    <div id="price" class="col-3 float-left">
+                        <p>Price : 120$</p>
+                    </div>
+                    <div id="add-to" class="col-3 offset-3 float-left">
+                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div id="order" class="col-3 float-left">
+                        <button>Order now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="related-products" class="col-12 float-left">
+            <div id="rel-text" class="col-6 offset-3 float-left">
+                <h1><span class="orange-color">Related </span>products</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div id="rel-products" class="col-10 offset-1 float-left">
+                <div class="rel-product">
+                    <div>
+                        <img src="../img/Assignment06/rel-product-1.png">
+                    </div>
+                    <h5>Reebok Track Jacket</h5>
+                    <h5 class="orange-color">100$</h5>
+                </div>
+                <div class="rel-product">
+                    <div>
+                        <img src="../img/Assignment06/rel-product-2.png">
+                    </div>
+                    <h5>Reebok Track Jacket</h5>
+                    <h5 class="orange-color">100$</h5>
+                </div>
+                <div class="rel-product">
+                    <div>
+                        <img src="../img/Assignment06/rel-product-3.png">
+                    </div>
+                    <h5>Reebok Track Jacket</h5>
+                    <h5 class="orange-color">100$</h5>
+                </div>
+                <div class="rel-product">
+                    <div>
+                        <img src="../img/Assignment06/rel-product-4.png">
+                    </div>
+                    <h5>Reebok Track Jacket</h5>
+                    <h5 class="orange-color">100$</h5>
+                </div>
+            </div>
+            <div id="email-subscribe" class="col-8 offset-2 float-left">
+                <div id="sub-ads" class="col-6 float-left">
+                    <h5 class="orange-color">News letter</h5>
+                    <p>join us now to get all news and special offers</p>
+                </div>
+                <div id="sub-email" class="col-3 offset-1 float-left">
+                    <i class="fas fa-envelope orange-color"></i>
+                    <input type="text" placeholder="type your email here">
+                </div>
+                <div id="sub-join" class="col-2 float-left">
+                    <button>join us</button>
+                </div>
+            </div>
+        </section>
+    </article>
+    <footer>
+        <div class="col-12 float-left">
+            <div id="footer" class="col-10 offset-1 float-left">
+                <div id="foot-copyright" class="col-3 float-left">
+                    <img src="../img/Assignment06/shopy-logo.png">
+                    <p>shopy &copy; 2015 . your copy right here</p>
+                </div>
+                <div id="foot-links" class="col-6 offset-1 float-left">
+                    <ul>
+                        <li class="orange-color">about us</li>
+                        <li>our feed</li>
+                        <li>join us</li>
+                        <li>contact us</li>
+                        <li>terms and conditions</li>
+                        <li>live support</li>
+                        <li>support</li>
+                        <li>our privacy</li>
+                    </ul>
+                </div>
+                <div id="foot-payment" class="col-2 float-left">
+                        <h5 class="orange-color">Payment Methods</h5>
+                    <img src="../img/Assignment06/payment.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $('#detail-size form label').on('click', function(){
+            $('#detail-size form label.checked').removeClass('checked');
+            $(this).addClass('checked');
+        });
+    </script>
+    <script>
+        let quantity = 0;
+        let quantityId = $('#product-quantity');
+        quantityId[0].innerHTML = `${quantity}`;
+        function decreaseQuantity() {
+            if (quantity > 0) {
+                quantity -= 1;
+                quantityId[0].innerHTML = quantity;
+            }
+        }
+        function increaseQuantity() {
+            quantity += 1;
+            quantityId[0].innerHTML = quantity;
+        }
+    </script>
+</body>
+</html>
