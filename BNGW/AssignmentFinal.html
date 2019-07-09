@@ -233,13 +233,32 @@
     </section>
     <section id="testimonials">
         <img src="../img/AssignmentFinal/slide-img.jpg">
+        <img src="../img/AssignmentFinal/slide-img-flipped.jpg">
+        <img src="../img/AssignmentFinal/slide-img-verti.jpg">
+        <img src="../img/AssignmentFinal/slide-img-verti-flipped.jpg">
         <div class="testimonials-text">
             <div class="text-blocks">
-                <h2>"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam..."</h2>
-                <p>Susan Sims, Interaction Designer at XYZ</p>
+                <div>
+                    <h2>"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam..."</h2>
+                    <p>Susan Sims, Interaction Designer at XYZ</p>
+                </div>
+                <div>
+                    <h2>subipad sitanenev etna a tare ereusop regetnI" naeneA .iud oido des cenoD .teuqila tilev ereusop "...mauq oel ue</h2>
+                    <p>ZYX ta rengiseD noitcaretnI ,smiS nasuS</p>
+                </div>
+                <div>
+                    <h2>,,Iuʇǝƃǝɹ dosnǝɹǝ ǝɹɐʇ ɐ ɐuʇǝ ʌǝuǝuɐʇᴉs pɐdᴉqns dosnǝɹǝ ʌǝlᴉʇ ɐlᴉbnǝʇ˙ pouǝɔ sǝp opᴉo pnᴉ˙ ∀ǝuǝɐu ǝn lǝo bnɐɯ˙˙˙,,</h2>
+                    <p>Snsɐu Sᴉɯs' Iuʇǝɹɐɔʇᴉou pǝsᴉƃuǝɹ ɐʇ X⅄Z</p>
+                </div>
+                <div>
+                    <h2>,,˙˙˙ɯɐnb oǝl nǝ uɐǝuǝ∀ ˙ᴉnp oᴉpo pǝs ɔǝuop ˙ʇǝnbᴉlɐ ʇᴉlǝʌ ǝɹǝnsod snqᴉdɐp sᴉʇɐuǝuǝʌ ǝʇuɐ ɐ ʇɐɹǝ ǝɹǝnsod ɹǝƃǝʇuI,,</h2>
+                    <p>Z⅄X ʇɐ ɹǝuƃᴉsǝp uoᴉʇɔɐɹǝʇuI 'sɯᴉS uɐsnS</p>
+                </div>
             </div>
             <div class="slide-button">
                 <ul>
+                    <li></li>
+                    <li></li>
                     <li></li>
                     <li></li>
                 </ul>
@@ -303,6 +322,53 @@
             }
         });
     });
+</script>
+<script>
+    let slideImg = $("#testimonials img");
+    slideImg.hide();
+    $(".text-blocks div").hide();
+    $("#testimonials img:first").show();
+    $(".slide-button ul li:first").css('opacity', '1');
+    $(".text-blocks div:first").show();
+    let i = 0;
+    setInterval(function () {
+        if (i >= slideImg.length) {
+            i = 0;
+        }
+        if (i == 0) {
+            $('#testimonials img:last').hide(200);
+            $('.text-blocks div:last').hide(200);
+            $('.slide-button ul li:last').css('opacity', '0.2');
+        } else {
+            $(`#testimonials img:nth-child(${i})`).hide(200);
+            $(`.text-blocks div:nth-child(${i})`).hide(200);
+            $(`.slide-button ul li:nth-child(${i})`).css('opacity', '0.2');
+        }
+        $(`#testimonials img:nth-child(${i + 1})`).show(200);
+        $(`.text-blocks div:nth-child(${i + 1})`).show(200);
+        $(`.slide-button ul li:nth-child(${i + 1})`).css('opacity', '1');
+        i++;
+    }, 4000)
+</script>
+<script>
+    let slideButton = $(".slide-button ul li");
+    for (let j = 0; j < slideButton.length; j++) {
+        $(`.slide-button ul li:nth-child(${j + 1})`).click(function () {
+            i = j;
+            if (j == 0) {
+                $('#testimonials img:last').hide(200);
+                $('.text-blocks div:last').hide(200);
+                $('.slide-button ul li:last').css('opacity', '0.2');
+            } else {
+                $(`#testimonials img:nth-child(${i})`).hide(200);
+                $(`.text-blocks div:nth-child(${i})`).hide(200);
+                $(`.slide-button ul li:nth-child(${i})`).css('opacity', '0.2');
+            }
+            $(`#testimonials img:nth-child(${i + 1})`).show(200);
+            $(`.text-blocks div:nth-child(${i + 1})`).show(200);
+            $(`.slide-button ul li:nth-child(${i + 1})`).css('opacity', '1');
+        })
+    }
 </script>
 </body>
 </html>
