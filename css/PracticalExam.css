@@ -1,0 +1,81 @@
+/*<link type="text/css" rel="stylesheet" href="../css/style.css"/>*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Montserrat, SansSerif, serif;
+}
+
+h1, h2, h3, h4, h5, p, label {
+    margin: 0;
+}
+
+.survey-name {
+    position: absolute;
+    left: 40px;
+    background-color: white;
+    z-index: 1;
+}
+
+.table {
+    margin-top: 20px;
+    padding: 40px 5px 20px;
+    border: 1px solid #4D5065;
+    border-radius: 25px;
+}
+
+.survey {
+    margin-top: 5%;
+}
+
+.survey > h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.table-row {
+    height: 50px;
+}
+
+.table-row > div {
+    min-height: 100%;
+    border: 1px solid #1b1e21;
+}
+
+.table-row > div > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#row-address {
+    height: 100px;
+}
+
+#row-address > div > input{
+    height: 75px;
+    width: 75%;
+}
+
+.reset-position > div > * {
+    position: relative;
+    transform: none;
+    padding: 10px 5px;
+}
+
+.survey-submit {
+    width: calc(100% - 30px);
+    height: 50px;
+    margin: 0 15px;
+    border: 1px solid #1b1e21;
+}
+
+.survey-submit > * {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

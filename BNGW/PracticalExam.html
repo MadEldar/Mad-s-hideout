@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATRIMONIAL SURVEY</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="../lib/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/PracticalExam.css"/>
+</head>
+<body>
+    <article>
+        <section id="survey-user" class="survey col-6 offset-3 float-left">
+            <h1>Matrimonial survey</h1>
+            <div class="col-12 float-left">
+                <div class="survey-name">
+                    <h3>Personal Details</h3>
+                </div>
+                <div class="table col-12 float-left">
+                    <div class="table-row col-12 float-left">
+                        <div class="info col-4 float-left">
+                            <p>Name:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div id="row-address" class="table-row col-12 float-left">
+                        <div class="info col-4 float-left">
+                            <p>Address:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="text" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left">
+                        <div class="info col-4 float-left">
+                            <p>Phone number:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="text" placeholder="Phone number">
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left">
+                        <div class="info col-4 float-left">
+                            <p>E-mail:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="text" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-4 float-left">
+                            <p>Gender:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="radio" name="gender" id="Male" checked>
+                            <label for="Male">Male</label>
+                            <input type="radio" name="gender" id="Female">
+                            <label for="Female">Female</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left">
+                        <div class="info col-4 float-left">
+                            <p>Age:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="text" placeholder="Age">
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-4 float-left">
+                            <p>Qualification:</p>
+                        </div>
+                        <div class="survey-input col-8 float-left">
+                            <input type="checkbox" id="BCA">
+                            <label for="BCA">BCA</label>
+                            <input type="checkbox" id="BA">
+                            <label for="BA">BA</label>
+                            <input type="checkbox" id="BSC">
+                            <label for="BSC">BSC</label>
+                        </div>
+                    </div>
+                    <div class="survey-submit col-12 float-left">
+                        <div>
+                            <button onclick="continueSurvey()">Continue</button>
+                            <a href="PracticalExam.html"><button>Reset</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="survey-questions" class="survey col-6 offset-3 float-left">
+            <h1>Matrimonial survey</h1>
+            <div class="col-12 float-left">
+                <div class="survey-name">
+                    <h3>Survey Questions</h3>
+                </div>
+                <div class="table col-12 float-left">
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>How often do you surf this site?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="daily" checked>
+                            <label for="daily">Daily</label>
+                            <input type="radio" name="times" id="weekly">
+                            <label for="weekly">Weekly</label>
+                            <input type="radio" name="times" id="monthly">
+                            <label for="monthly">Monthly</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left">
+                        <div class="info col-7 float-left">
+                            <p>Which matrimonial site do you visit mostly?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>How often do you surf this site?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="home" checked>
+                            <label for="home">Home</label>
+                            <input type="radio" name="times" id="office">
+                            <label for="office">Office</label>
+                            <input type="radio" name="times" id="cyber">
+                            <label for="cyber">Cyber cafe</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>How do you feel about our service?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="fair" checked>
+                            <label for="fair">Fair</label>
+                            <input type="radio" name="times" id="good">
+                            <label for="good">Good</label>
+                            <input type="radio" name="times" id="vgood">
+                            <label for="vgood">Cyber cafe</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>Which type of member are you?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="free" checked>
+                            <label for="free">Free</label>
+                            <input type="radio" name="times" id="premium">
+                            <label for="premium">Premium</label>
+                            <input type="radio" name="times" id="gold">
+                            <label for="gold">Gold</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>If you're a free member, would you like to pay?</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="yes" checked>
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="times" id="no">
+                            <label for="no">No</label>
+                            <input type="radio" name="times" id="consider">
+                            <label for="consider">Consider</label>
+                        </div>
+                    </div>
+                    <div class="table-row col-12 float-left reset-position">
+                        <div class="info col-7 float-left">
+                            <p>Rate this Website.</p>
+                        </div>
+                        <div class="survey-input col-5 float-left">
+                            <input type="radio" name="times" id="bad" checked>
+                            <label for="bad">Below 5</label>
+                            <input type="radio" name="times" id="average">
+                            <label for="average">5 to 10</label>
+                            <input type="radio" name="times" id="great">
+                            <label for="great">More than 10</label>
+                        </div>
+                    </div>
+                    <div class="survey-submit col-12 float-left">
+                        <div>
+                            <button onclick="submit()">Submit</button>
+                            <a href="PracticalExam.html"><button>Reset</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <script>
+        $('#survey-questions').hide();
+    </script>
+    <script>
+        function continueSurvey() {
+            $('#survey-user').hide();
+            $('#survey-questions').show();
+        }
+    </script>
+    <script>
+        function submit () {
+            alert('Thanks for participating into Survey');
+        }
+    </script>
+</body>
+</html>
