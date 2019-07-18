@@ -28,5 +28,3 @@ create table equipment(
 
 insert into equipment(eqm_id, eqm_name, qem_quantity, emp_owner)
     values ('MTDB-21', 'May tinh de ban', '1', 1);
-
-drop table hang;
